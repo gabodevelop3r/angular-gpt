@@ -9,4 +9,4 @@ import { CommonModule } from '@angular/common';
   templateUrl: './translatePage.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TranslatePage { }
+export default class TranslatePage { }

@@ -9,4 +9,4 @@ import { CommonModule } from '@angular/common';
   templateUrl: './prosConsPage.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProsConsPage { }
+export default class ProsConsPage { }

@@ -1,4 +1,4 @@
-<div class="chat-container w-full md:w-auto">
+]<div class="chat-container w-full md:w-auto">
   <div class="chat-messages">
     <div class="grid gap-y-2">
 
@@ -21,14 +21,14 @@
       }
     </div>
   </div>
-  <!-- <app-text-message-box [plasceholder]="'Escribe aquí lo que deseas'" (onMessage)="handleMessage($event)"/> -->
+  <app-text-message-box [placeholder]="'Escribe aquí lo que deseas'" (onMessage)="handleMessage($event)"/>
    <!-- <app-text-message-box-file [placeholder]="'Escribe aquí lo que deseas'" (onMessage)="handleMessageWithFile($event)"/> -->
-    <app-text-message-box-select
+    <!-- <app-text-message-box-select
         [placeholder]="'Escribe aquí lo que deseas'"
         (onMessage)="handleMessageWithSelect($event)"
         [options]="[
           {id: '1', text: 'Opción 1'},
           {id: '2', text: 'Opción 2'},
         ]"
-        />
+        /> -->
 </div>

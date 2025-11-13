@@ -9,4 +9,4 @@ import { CommonModule } from '@angular/common';
   templateUrl: './imageTunningPage.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ImageTunningPage { }
+export default class ImageTunningPage { }

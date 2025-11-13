@@ -9,4 +9,4 @@ import { CommonModule } from '@angular/common';
   templateUrl: './assistantPage.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AssistantPage { }
+export default class AssistantPage { }

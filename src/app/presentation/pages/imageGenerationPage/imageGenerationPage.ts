@@ -10,4 +10,4 @@ import { CommonModule } from '@angular/common';
   templateUrl: './imageGenerationPage.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ImageGenerationPage { }
+export default class ImageGenerationPage { }

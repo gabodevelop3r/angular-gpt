@@ -9,4 +9,4 @@ import { CommonModule } from '@angular/common';
   templateUrl: './audioToTextPage.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AudioToTextPage { }
+export default class AudioToTextPage { }
