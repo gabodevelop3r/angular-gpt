@@ -1,59 +1,119 @@
-# AngularGPT
+# Angular GPT 🤖
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.8.
+Aplicación Angular integrada con OpenAI GPT para corrección ortográfica y análisis de texto.
 
-## Development server
+## 📋 Requisitos
 
-To start a local development server, run:
+- [Docker](https://www.docker.com/get-started) instalado
+- [Docker Compose](https://docs.docker.com/compose/install/) instalado
 
+## 🚀 Inicio Rápido
+
+### Desarrollo con Docker
+
+1. **Clonar el repositorio**
 ```bash
-ng serve
+git clone <tu-repositorio>
+cd angular-GPT
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+2. **Levantar el contenedor**
 ```bash
-ng generate component component-name
+docker-compose up --build
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+3. **Acceder a la aplicación**
+```
+http://localhost:4200
 ```
 
-## Building
+El servidor se recargará automáticamente al detectar cambios en los archivos.
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Desarrollo Local (sin Docker)
 
 ```bash
-ng test
+npm install
+npm start
 ```
 
-## Running end-to-end tests
+## 🛠️ Comandos Útiles
 
-For end-to-end (e2e) testing, run:
+### Docker
 
 ```bash
-ng e2e
+# Levantar en modo detached (segundo plano)
+docker-compose up -d
+
+# Ver logs
+docker-compose logs -f
+
+# Detener contenedores
+docker-compose down
+
+# Reconstruir imagen
+docker-compose up --build
+
+# Acceder al contenedor
+docker exec -it angular-gpt sh
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Angular CLI (dentro del contenedor)
 
-## Additional Resources
+```bash
+# Entrar al contenedor
+docker exec -it angular-gpt sh
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+# Generar componente
+npx ng generate component nombre-componente
+
+# Generar servicio
+npx ng generate service nombre-servicio
+
+# Ver versión de Angular
+npx ng version
+
+# Build de producción
+npx ng build
+```
+
+## 📦 Tecnologías
+
+- **Angular** 20.3.0
+- **Tailwind CSS** 4.1.16
+- **RxJS** 7.8.0
+- **OpenAI API** - Integración con GPT-4
+
+## 🐳 Estructura Docker
+
+- **Dockerfile**: Multi-stage con etapas de desarrollo, build y producción
+- **docker-compose.yml**: Configuración para desarrollo con hot-reload
+- **.dockerignore**: Optimiza el contexto de construcción
+
+## 🏗️ Build de Producción
+
+### Con Docker
+
+```bash
+docker build -t angular-gpt:prod --target production .
+docker run -p 80:80 angular-gpt:prod
+```
+
+Acceder en: `http://localhost`
+
+### Local
+
+```bash
+npm run build
+```
+
+Los archivos se generan en `dist/angular-gpt/browser/`
+
+## 📝 Notas
+
+- El puerto por defecto es `4200` para desarrollo
+- Las variables de entorno deben configurarse según tu API de OpenAI
+- El contenedor incluye hot-reload con `--poll` para mejor compatibilidad
+
+## 📄 Licencia
+
+Este proyecto es privado.
