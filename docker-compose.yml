@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  angular-app:
+    container_name: angular-gpt
+    image: node:20-alpine
+    working_dir: /usr/src/app
+    ports:
+      - "4200:4200"
+    volumes:
+      - .:/usr/src/app
+      - node_modules_cache:/usr/src/app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - NODE_ENV=development
+    command: sh -c "npm install && npx ng serve --host 0.0.0.0 --poll 200"
+volumes:
+  node_modules_cache:
